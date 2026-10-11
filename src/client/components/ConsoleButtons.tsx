@@ -39,14 +39,14 @@ export default function ConsoleButtons({ data: server }: { data: SdkServer }) {
     const own = buttons.data.buttons.filter((button) => !button.global);
 
     return (
-        <div className='qcmd:mb-4 qcmd:flex qcmd:flex-wrap qcmd:items-center qcmd:gap-2'>
+        <div className='qcmd:mb-3 qcmd:flex qcmd:flex-wrap qcmd:items-center qcmd:gap-1.5'>
             {buttons.data.buttons.map((button) => (
-                <Button key={button.id} size='small' color={button.color} isSecondary={button.color === 'grey'} disabled={running.isPending} onClick={() => click(button)} title={button.commands.join('\n')}>
+                <Button key={button.id} size='xsmall' color={button.color} isSecondary={button.color === 'grey'} disabled={running.isPending} onClick={() => click(button)} title={button.commands.join('\n')}>
                     {button.label}
                 </Button>
             ))}
             {buttons.data.can_manage && (
-                <Button.Text size='small' onClick={() => setManaging(true)}>
+                <Button.Text size='xsmall' onClick={() => setManaging(true)}>
                     {buttons.data.buttons.length === 0 ? 'Add quick command' : 'Edit'}
                 </Button.Text>
             )}
