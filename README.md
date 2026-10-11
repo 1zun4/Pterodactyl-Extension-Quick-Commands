@@ -1,9 +1,9 @@
 # Quick Commands for Pterodactyl
 
-[![Release](https://img.shields.io/github/v/release/1zun4/Pterodactyl-Extension-Quick-Commands?style=flat-square)](https://github.com/1zun4/Pterodactyl-Extension-Quick-Commands/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/1zun4/Pterodactyl-Extension-Quick-Commands/total?style=flat-square)](https://github.com/1zun4/Pterodactyl-Extension-Quick-Commands/releases)
+[![Release](https://img.shields.io/github/v/release/CCBlueX/Pterodactyl-Extension-Quick-Commands?style=flat-square)](https://github.com/CCBlueX/Pterodactyl-Extension-Quick-Commands/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/CCBlueX/Pterodactyl-Extension-Quick-Commands/total?style=flat-square)](https://github.com/CCBlueX/Pterodactyl-Extension-Quick-Commands/releases)
 [![Pterodactyl](https://img.shields.io/badge/Pterodactyl-2.0-0e4688?style=flat-square)](https://pterodactyl.io)
-[![License](https://img.shields.io/github/license/1zun4/Pterodactyl-Extension-Quick-Commands?style=flat-square)](LICENSE)
+[![License](https://img.shields.io/github/license/CCBlueX/Pterodactyl-Extension-Quick-Commands?style=flat-square)](LICENSE)
 
 One-click buttons above the console for the commands you send every day. Works with every game.
 
@@ -11,7 +11,7 @@ One-click buttons above the console for the commands you send every day. Works w
 
 ## Install
 
-1. Download `quick-commands-<version>.pteroext` from the [latest release](https://github.com/1zun4/Pterodactyl-Extension-Quick-Commands/releases/latest).
+1. Download `quick-commands-<version>.pteroext` from the [latest release](https://github.com/CCBlueX/Pterodactyl-Extension-Quick-Commands/releases/latest).
 2. Install and enable it under **Admin → Extensions**.
 3. Add buttons under **Admin → Quick Commands**, or with **Edit** above a server's console.
 
