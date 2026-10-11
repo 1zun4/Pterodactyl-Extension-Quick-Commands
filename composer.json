@@ -1,0 +1,11 @@
+{
+    "description": "One-click console buttons for the commands you send every day.",
+    "autoload": {
+        "psr-4": {
+            "QuickCommands\\": "src/"
+        }
+    },
+    "config": {
+        "autoloader-suffix": "QuickCommandsExtension"
+    }
+}

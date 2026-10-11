@@ -1,0 +1,31 @@
+{
+    "$schema": "./node_modules/@pterodactyl/sdk/manifest.schema.json",
+    "id": "quick-commands",
+    "name": "Quick Commands",
+    "version": "1.0.0",
+    "requires": {
+        "panel": "^2.0.0-dev",
+        "sdk": "^2.0.0-beta.4",
+        "php": "^8.3"
+    },
+    "description": "One-click console buttons for the commands you send every day.",
+    "author": "Izuna Seikatsu",
+    "provider": "QuickCommands\\QuickCommandsProvider",
+    "ui": {
+        "entry": "dist/client.js",
+        "mode": "native",
+        "prefix": "qcmd",
+        "screens": [
+            {
+                "id": "admin",
+                "area": "admin",
+                "path": "quick-commands",
+                "nav": {
+                    "label": "Quick Commands",
+                    "icon": "square-terminal"
+                }
+            }
+        ]
+    },
+    "icon": "square-terminal"
+}
