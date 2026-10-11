@@ -5,7 +5,7 @@
 [![Pterodactyl](https://img.shields.io/badge/Pterodactyl-2.0-0e4688?style=flat-square)](https://pterodactyl.io)
 [![License](https://img.shields.io/github/license/CCBlueX/Pterodactyl-Extension-Quick-Commands?style=flat-square)](LICENSE)
 
-One-click buttons above the console for the commands you send every day. Works with every game.
+One-click buttons right below the console input for the commands you send every day. Works with every game.
 
 ![Console buttons](docs/screenshots/console.png)
 
@@ -13,7 +13,7 @@ One-click buttons above the console for the commands you send every day. Works w
 
 1. Download `quick-commands-<version>.pteroext` from the [latest release](https://github.com/CCBlueX/Pterodactyl-Extension-Quick-Commands/releases/latest).
 2. Install and enable it under **Admin → Extensions**.
-3. Add buttons under **Admin → Quick Commands**, or with **Edit** above a server's console.
+3. Add buttons under **Admin → Quick Commands**, or with **Edit** below a server's console input.
 
 ## Features
 

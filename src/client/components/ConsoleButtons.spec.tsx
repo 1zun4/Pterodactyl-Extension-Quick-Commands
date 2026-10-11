@@ -26,3 +26,18 @@ test('sends plain buttons at once and asks for placeholder values first', async 
     expect(screen.queryByRole('button', { name: 'Edit' })).toBeNull();
     host.dispose();
 });
+
+test('moves the row directly below the console input', async () => {
+    vi.mocked(api.getButtons).mockResolvedValue({ buttons: [button(1, 'Save', ['save-all'])], can_manage: false });
+    const console = document.createElement('div');
+    console.innerHTML = '<div id="input-row"><input aria-label="Console command input." /></div><div id="after"></div>';
+    document.body.append(console);
+    const server = createTestServer({ owner: false, permissions: ['control.console'] });
+    const host = createExtensionTestHost({ extensionId: 'quick-commands', prefix: 'qcmd', server });
+    render(<ConsoleButtons data={server} />, { wrapper: host.Wrapper });
+
+    const save = await screen.findByRole('button', { name: 'Save' });
+    expect(document.getElementById('input-row')!.nextElementSibling!.contains(save)).toBe(true);
+    console.remove();
+    host.dispose();
+});

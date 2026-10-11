@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { Button, Dialog, Input, Label, httpErrorToHuman, toast, type SdkServer } from '@pterodactyl/sdk';
 import { deleteButton, getButtons, keys, runButton, saveButton, type ButtonInput, type QuickButton, type ServerButtons } from '../api';
 import ButtonDialog from './ButtonDialog';
+import { useSpotBelowConsoleInput } from '../lib/consoleInput';
 
-/** The button row above the console. */
+/** The button row below the console input, or above the console when there is no input. */
 export default function ConsoleButtons({ data: server }: { data: SdkServer }) {
     const id = server.attributes.identifier;
     const queryClient = useQueryClient();
@@ -13,6 +15,7 @@ export default function ConsoleButtons({ data: server }: { data: SdkServer }) {
     const [values, setValues] = useState<Record<string, string>>({});
     const [managing, setManaging] = useState(false);
     const [editing, setEditing] = useState<QuickButton | 'new' | null>(null);
+    const spot = useSpotBelowConsoleInput();
     const onError = (error: unknown) => toast.error(httpErrorToHuman(error));
     const update = (result: ServerButtons) => queryClient.setQueryData(keys.server(id), result);
 
@@ -38,8 +41,8 @@ export default function ConsoleButtons({ data: server }: { data: SdkServer }) {
     };
     const own = buttons.data.buttons.filter((button) => !button.global);
 
-    return (
-        <div className='qcmd:mb-3 qcmd:flex qcmd:flex-wrap qcmd:items-center qcmd:gap-1.5'>
+    const row = (
+        <div className={`${spot ? 'qcmd:mt-2' : 'qcmd:mb-3'} qcmd:flex qcmd:flex-wrap qcmd:items-center qcmd:gap-1.5`}>
             {buttons.data.buttons.map((button) => (
                 <Button key={button.id} size='xsmall' color={button.color} isSecondary={button.color === 'grey'} disabled={running.isPending} onClick={() => click(button)} title={button.commands.join('\n')}>
                     {button.label}
@@ -130,4 +133,6 @@ export default function ConsoleButtons({ data: server }: { data: SdkServer }) {
             )}
         </div>
     );
+
+    return spot ? createPortal(row, spot) : row;
 }
